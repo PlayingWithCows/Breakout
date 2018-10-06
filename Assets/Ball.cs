@@ -5,7 +5,7 @@ using UnityEngine;
 public class Ball : MonoBehaviour {
 
     public bool isReleased;
-    public float attractionToBottom = 1;
+    public float attractionToBottom = 200;
     public float maxSpeed = 5f;
 
 
