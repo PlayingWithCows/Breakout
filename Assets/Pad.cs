@@ -4,24 +4,19 @@ using UnityEngine;
 
 public class Pad : MonoBehaviour {
 
-    public List<Transform> balls;
+    public Transform[] launchSlots;
+    public float padSize = 1;
 
     void Start()
     {
-       Ball[] ballsObjects = GameObject.FindObjectsOfType<Ball>();
-        foreach (Ball ball in ballsObjects)
-        {
-            balls.Add(ball.gameObject.transform);
-        }
+       
     }
 
-    public void AddBall(Transform ball)
+    public void AdjustPadSize()
     {
-
+        transform.localScale = new Vector3(padSize, 1f, 1f);
     }
-    public void RemoveBall()
-    {
 
-    }
+
 
 }
