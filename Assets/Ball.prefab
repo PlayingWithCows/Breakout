@@ -20,6 +20,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4777025778805122}
   - component: {fileID: 114661382435099370}
+  - component: {fileID: 54256377646934104}
+  - component: {fileID: 135358645037375648}
   m_Layer: 0
   m_Name: Ball
   m_TagString: Untagged
@@ -37,7 +39,6 @@ GameObject:
   - component: {fileID: 4617515996517320}
   - component: {fileID: 33275814298028296}
   - component: {fileID: 23143008580159610}
-  - component: {fileID: 135846562266610978}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -52,8 +53,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1815879624401780}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 7.76}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4777025778805122}
   m_RootOrder: 0
@@ -65,7 +66,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1559928217064086}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 4.8, z: 50.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4617515996517320}
@@ -114,6 +115,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1815879624401780}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!54 &54256377646934104
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1559928217064086}
+  serializedVersion: 2
+  m_Mass: 2
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 2
+  m_Constraints: 0
+  m_CollisionDetection: 2
 --- !u!114 &114661382435099370
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -125,13 +141,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee53716cf32bdbd488c60ba61c3e948f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!135 &135846562266610978
+  isReleased: 1
+  attractionToBottom: 500
+  maxSpeed: 22.56
+--- !u!135 &135358645037375648
 SphereCollider:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1815879624401780}
-  m_Material: {fileID: 0}
+  m_GameObject: {fileID: 1559928217064086}
+  m_Material: {fileID: 13400000, guid: d1fdc83019a60c749b11c94a632e836d, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2

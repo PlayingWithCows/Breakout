@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Ball : MonoBehaviour {
+public class Ball : MonoBehaviour
+{
 
     public bool isReleased;
     public float attractionToBottom = 200;
@@ -14,16 +15,28 @@ public class Ball : MonoBehaviour {
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
+
     }
     private void Update()
     {
-        if (isReleased)
+
+    }
+    private void FixedUpdate()
+    {
+        rb.AddForce(new Vector3(0, 0, -attractionToBottom*3f * Time.deltaTime), ForceMode.Force);
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.collider.CompareTag("Pad"))
         {
-            float currentSpeed = rb.velocity.sqrMagnitude;
+            rb.AddForce(rb.velocity * 1.3f, ForceMode.VelocityChange);
+        }
 
-
-            rb.AddForce(0, -attractionToBottom * Time.deltaTime, 0, ForceMode.Impulse);
-
+        if (collision.collider.CompareTag("Death"))
+        {
+            rb.AddForce(rb.velocity * 1.3f, ForceMode.VelocityChange);
         }
     }
 }
+

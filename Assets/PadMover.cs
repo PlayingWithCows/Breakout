@@ -24,7 +24,7 @@ public class PadMover : MonoBehaviour {
         float mouseMovementX = Input.GetAxis("Mouse X");
         float mouseMovementY = Input.GetAxis("Mouse Y");
 
-        Debug.Log(mouseMovementY);
+       // Debug.Log(mouseMovementY);
 
         //is new x position bigger or smaller than minMaxX
         if (transform.position.x + mouseMovementX > minMaxX.y && mouseMovementX >= 0) 
